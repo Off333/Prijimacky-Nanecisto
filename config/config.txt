@@ -1,0 +1,23 @@
+<?php
+/**
+ * pripojeni k databazi
+ * pro nastaveni je nutne doplnit udaje a prejmenovat na config.php
+ */
+$DB_host="localhost";
+$DB_user=;
+$DB_psw=;
+$DB_name=;
+
+/**
+ * email použitý pro odesílání emailů
+ * server na který se emaily posílají
+ */
+$Email_host="smtp.seznam.cz";
+$Email_SMTPAuth=true;
+$Email_user=;
+$Email_psw=;
+$Email_SMTPSecure="ssl";
+$Email_port=465;
+$Email_visible_name="Přijímačky nanečisto, SŠPBrno";
+$Email_replyTo=;
+$Email_replyTo_visibleName=;

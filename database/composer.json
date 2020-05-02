@@ -1,0 +1,28 @@
+{
+    "name": "phptricks/database_class",
+    "description": "A database class which uses the PDO extension, Supports many drivers",
+    "type": "class",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "mohammad walid anzawi",
+            "email": "m.anzawi2013@gmail.com"
+        },
+        {
+            "name": "phptricks Team - Mohammad Anzawi",
+            "email": "team@phptricks.org"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+
+    "autoload": {
+        "psr-4": {
+            "PHPtricks\\Orm\\" : "phptricksORM"
+        },
+
+        "files": [
+            "Config/config_function.php"
+        ]
+    }
+}

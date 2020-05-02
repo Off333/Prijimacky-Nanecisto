@@ -1,0 +1,184 @@
+/* CSS Document */
+html,
+body {
+  height: 100%;
+}
+
+body {
+    background-color: #e0e0e0!important;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* https://startbootstrap.com/snippets/sticky-footer-flexbox/ */
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+  color: #fff;
+}
+
+.dark{
+  background-color: #333a41 !important;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.dark a{
+  color: #fff!important;
+}
+
+.dark a:hover{
+  text-decoration: none!important;
+}
+
+.thumbnail{
+  border: none!important;
+  background-color: #333a41!important;
+  width: 100px;
+}
+
+.navbar-blue{
+  background-color: #417af8;
+  padding-top: 0!important;
+  padding-bottom: 0!important;
+}
+
+.navbar-blue a{
+  color: #fff !important;
+}
+
+.navbar-blue .navbar-link{
+  padding: 2rem!important;
+}
+
+.navbar-blue .active{
+  background-color: #396cdb!important;
+}
+
+.navbar-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.mycontainer{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+  padding-right: 1rem;
+  width: 100%!important;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 3rem;
+  font-size: 1.2rem;
+}
+
+.container-white{  
+  background-color: #fff;
+}
+
+.container-gray{
+  background-color: #cacaca;
+}
+
+.heading{
+  font-size: 2rem;
+  color: #858585;
+  font-weight: normal;
+}
+
+.heading2{
+  font-size: 1.7rem;
+  color: #939393;
+  font-weight: 500;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.form-label{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.form-input{
+  margin-top: 1rem;
+  margin-bottom: 1rem; 
+  padding: 1rem!important;
+  padding-left: 2rem!important;
+  border: none!important;
+  border-radius: 0!important;
+  background-color: #e7e7e7!important;
+}
+
+.form-separator{
+  margin-top: 1rem;
+  margin-bottom: 1rem;  
+  padding: 1rem!important;
+  border: none!important;
+  border-radius: 0!important;
+  background-color: #d1d1d1!important;
+}
+
+.form-checkbox{
+  position: relative!important;
+  margin-left: auto!important;
+}
+
+.form-button{
+  padding: 0.4rem 1.6rem 0.4rem 1.6rem;
+  border: none;
+  border-radius: 0;
+  font-weight: 500;
+  background-color: #cacaca;
+}
+
+.button-align{
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.map{
+  height: 65vh;
+  width: 55vw;
+  margin: auto;
+}
+
+.link{
+  text-decoration: none!important;
+  color: #656565;
+  font-size: 1.2rem;
+  margin-bottom: 0rem;
+}
+
+.link-img{
+  margin-top: -0.2rem;
+}
+
+.link:hover{
+  color: #252525;
+}
+
+@media(max-width: 1199px){
+  .thumbnail{
+    width: 150px;
+  }
+}
+
+@media(max-width: 575px){
+  .thumbnail{
+    width: 250px;
+  }
+}
+
+@media(max-width: 362px){
+  .thumbnail{
+    width: 200px;
+  }
+  .dark{
+    padding-left: 2rem!important;
+  }
+}
