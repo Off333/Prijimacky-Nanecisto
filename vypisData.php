@@ -291,7 +291,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST" || $debug){
                         $rowHtml .= ">";
                     }
                     $rowHtml .= "<label class='w-100 item-label'>";
-                    isset($PrintCommentOutside) ? $rowHtml .= $PrintCommentOutside : $rowHtml .= $row[$column];
+                    if($columnsType[$index] == "date" && isset($row[$column]) && !empty($row[$column])) {
+                        $rowHtml .= intval(substr($row[$column], 8, 2)).". ".dateMonth($row[$column])." ".substr($row[$column], 0, 4);
+                    } else {
+                        isset($PrintCommentOutside) ? $rowHtml .= $PrintCommentOutside : $rowHtml .= $row[$column];
+                    }
                     $rowHtml .= "</label>";
                     $rowHtml .= "</p>";
                     $rowHtml .= "</td>";

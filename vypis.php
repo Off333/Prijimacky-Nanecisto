@@ -26,7 +26,7 @@ include_once "html/nav.php";
                     <a class="dropdown-item" href="#"><input id="hideItem1" class="changeBtn hide" name="hide0" type=checkbox> <label for="hideItem1"> Variabliní symbol</label></a>
                     <a class="dropdown-item" href="#"><input id="hideItem2" class="changeBtn hide" name="hide1" type=checkbox> <label for="hideItem2"> Datum přihlášení</label></a>
                     <a class="dropdown-item" href="#"><input id="hideItem3" class="changeBtn hide" name="hide2" type=checkbox> <label for="hideItem3"> Čas přihlášení</label></a>
-                    <a class="dropdown-item" href="#"><input id="hideItem4" class="changeBtn hide" name="hide3" type=checkbox> <label for="hideItem4"> Přijmení</label></a>
+                    <a class="dropdown-item" href="#"><input id="hideItem4" class="changeBtn hide" name="hide3" type=checkbox> <label for="hideItem4"> Příjmení</label></a>
                     <a class="dropdown-item" href="#"><input id="hideItem5" class="changeBtn hide" name="hide4" type=checkbox> <label for="hideItem5"> Křestní jméno</label></a>
                     <a class="dropdown-item" href="#"><input id="hideItem6" class="changeBtn hide" name="hide5" type=checkbox> <label for="hideItem6"> E-mail</label></a>
                     <a class="dropdown-item" href="#"><input id="hideItem7" class="changeBtn hide" name="hide6" type=checkbox> <label for="hideItem7"> Telefon</label></a>

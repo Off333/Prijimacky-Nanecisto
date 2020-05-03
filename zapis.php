@@ -15,7 +15,8 @@ include_once "recaptchalib.php";
 $err = 'NESPECIFIKOVANY ERROR';
 
 try {
-    if (empty($_SESSION['user'])) {
+    $user = $db->table('spravci')->where('User', '=', $_SESSION['user'])->where('User', '=', $_COOKIE['user'])->select()->last();
+    if($user['User'] != $_SESSION['user'] && $user['User'] != $_COOKIE['user']){
         if($Occupation >= $eventInfo['FreeSpace'] || !isset($eventInfo['StartRegDate']) || time() < strtotime($eventInfo['StartRegDate']) || time() > strtotime($eventInfo['EndRegDate'])) {
             header("Location:registrace.php?chyba=Invalid parameter(s)- nesplnene parametry akce params(".($eventInfo['FreeSpace'] - $Occupation)." <= 0 OR ".$eventInfo['StartRegDate']." is not set OR ".time()." > ".strtotime($eventInfo['StartRegDate'])." OR ".time()." < ".strtotime($eventInfo['EndRegDate']).")");
             exit();
