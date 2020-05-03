@@ -14,6 +14,7 @@ require 'PHPMailer-master/src/PHPMailer.php';
 require 'PHPMailer-master/src/SMTP.php';
 
 //přístup k databázi
+//https://github.com/anzawi/php-database-class
 require_once "database/vendor/autoload.php";
 
 use PHPtricks\Orm\Database;;
@@ -47,6 +48,7 @@ if(isset($_SESSION['LAST_ACTIVITY'])){
 }
 
 //ziskani IP adresy
+//https://stackoverflow.com/questions/1634782/what-is-the-most-accurate-way-to-retrieve-a-users-correct-ip-address-in-php
 function get_ip_address() {
 
     // Check for shared Internet/ISP IP
