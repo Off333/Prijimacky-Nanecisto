@@ -47,43 +47,7 @@ if(isset($_SESSION['LAST_ACTIVITY'])){
     $_SESSION['LAST_ACTIVITY'] = time(); // update last activity time stamp
 }
 
-//ziskani IP adresy
-//https://stackoverflow.com/questions/1634782/what-is-the-most-accurate-way-to-retrieve-a-users-correct-ip-address-in-php
 function get_ip_address() {
-
-    // Check for shared Internet/ISP IP
-    if (!empty($_SERVER['HTTP_CLIENT_IP']) && validate_ip($_SERVER['HTTP_CLIENT_IP'])) {
-        return $_SERVER['HTTP_CLIENT_IP'];
-    }
-
-    // Check for IP addresses passing through proxies
-    if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-
-        // Check if multiple IP addresses exist in var
-        if (strpos($_SERVER['HTTP_X_FORWARDED_FOR'], ',') !== false) {
-            $iplist = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
-            foreach ($iplist as $ip) {
-                if (validate_ip($ip))
-                    return $ip;
-            }
-        }
-        else {
-            if (validate_ip($_SERVER['HTTP_X_FORWARDED_FOR']))
-                return $_SERVER['HTTP_X_FORWARDED_FOR'];
-        }
-    }
-    if (!empty($_SERVER['HTTP_X_FORWARDED']) && validate_ip($_SERVER['HTTP_X_FORWARDED']))
-        return $_SERVER['HTTP_X_FORWARDED'];
-    if (!empty($_SERVER['HTTP_X_CLUSTER_CLIENT_IP']) && validate_ip($_SERVER['HTTP_X_CLUSTER_CLIENT_IP']))
-        return $_SERVER['HTTP_X_CLUSTER_CLIENT_IP'];
-    if (!empty($_SERVER['HTTP_FORWARDED_FOR']) && validate_ip($_SERVER['HTTP_FORWARDED_FOR']))
-        return $_SERVER['HTTP_FORWARDED_FOR'];
-    if (!empty($_SERVER['HTTP_FORWARDED']) && validate_ip($_SERVER['HTTP_FORWARDED']))
-        return $_SERVER['HTTP_FORWARDED'];
-
-    //Write to error log
-    //error_log("Failed to find IP address!");
-    // Return unreliable IP address since all else failed
     return $_SERVER['REMOTE_ADDR'];
 }
 
