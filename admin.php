@@ -166,15 +166,15 @@ if((isset($eventInfo['Id'])) && (!isset($eventInfo['StartRegDate'])) && (!isset(
 
 ?>
 <form method="post" action="" onsubmit="return validate()">
-    <div class="container bg-white border border-primary rounded rounded-lg mt-3 py-auto pt-2">
+    <div class="container bg-white mt-3 py-auto pt-2">
         <a class="btn btn-secondary ml-3 my-3" data-toggle="collapse" role="button" href="#inputWYSIWYG" aria-expanded="false" aria-controls="inputWYSIWIG"><legend for="WYCIWYG" class="form-label h5">Popis akce na hlavní­ stránce</legend></a>
     <div class="form-group collapse" id="inputWYSIWYG">
             <textarea id="WYCIWYG" class="form-control" name="EventHeader"> <?php echo $db->table('header')->where('Id', '=', $headerId)->select()->first(); ?></textarea>
-        <button class="btn btn-success" type="button" name="changeHeader">Uložit popis</button>
+        <button class="btn btn-success my-2" type="button" name="changeHeader">Uložit popis</button>
     </div>
     </div>
 
-    <div class="container bg-white border border-primary rounded rounded-lg mt-3 py-auto pt-2">
+    <div class="container bg-white mt-3 py-auto pt-2">
         <div class="mb-2 mt-4 ml-3">
                 <p class="h5">Termí­n registrací­ a platba</p>
         </div>
@@ -270,7 +270,7 @@ if((isset($eventInfo['Id'])) && (!isset($eventInfo['StartRegDate'])) && (!isset(
         </div>
     </div>
 
-    <div class="container bg-white border border-primary rounded rounded-lg mt-3 py-auto pt-2">
+    <div class="container bg-white mt-3 py-auto py-2">
         <div class="ml-3 my-3">
         <input class="btn btn-warning" type="submit" name="change"<?php echo "value=\"". $changeButtonText. "\" ". $changeButtonDisable; ?>>
         </div>
@@ -279,7 +279,7 @@ if((isset($eventInfo['Id'])) && (!isset($eventInfo['StartRegDate'])) && (!isset(
 <?php
 if((isset($eventInfo['Id'])) && (isset($eventInfo['StartRegDate'])) && (isset($eventInfo['EndRegDate']))) {
     ?>
-    <div class="ml-3 my-3">
+    <div class="ml-3 mb-3">
         <form method="post" action="" onSubmit="return confirm('Ukončit akci?')">
             <input class="btn btn-danger" type="submit" name="delete" value="<?php echo $deleteButtonText; ?>">
         </form>

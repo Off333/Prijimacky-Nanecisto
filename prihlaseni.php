@@ -45,7 +45,7 @@ if (empty($_SESSION['user']) || empty($_COOKIE['user'])) {
         </div>      
         <?php echo $errMsg; ?>
         </div>
-        <div class="container bg-white border border-primary rounded rounded-lg mt-3 py-auto pb-1">
+        <div class="container bg-white mt-3 py-auto pb-1">
             <form method="post" action="prihlaseni.php">
                 <fieldset>
                     <legend>Přihlášení</legend>

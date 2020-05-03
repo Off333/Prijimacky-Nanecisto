@@ -76,7 +76,7 @@ switch($type) {
 
 ?>
 <article>
-    <div class="container bg-white border border-primary rounded rounded-lg mt-3 py-4">
+    <div class="container bg-white mt-3 py-4">
         <form method="get">
             <p class="h3">Výběr typu emailu:
             <select name="type" onchange="this.form.submit()">
@@ -144,7 +144,7 @@ switch($type) {
             </p>
         </div>
     </div>
-    <div class="container bg-white border border-primary rounded rounded-lg mt-3 py-4">
+    <div class="container bg-white mt-3 py-4">
         <form method="post">
             <input name="type" value="<?php echo $type; ?>" hidden>
             <div class="form-group row ml-2">
@@ -160,7 +160,7 @@ switch($type) {
             <input class="btn btn-success my-2" type="submit" name="submit" value="Změnit">
         </form>
     </div>
-    <div class="container bg-white border border-primary rounded rounded-lg mt-3 py-4">
+    <div class="container bg-white mt-3 py-4">
         <button class="btn btn-warning my-3" type="button" data-toggle="collapse" data-target="#preview" aria-expanded="false" aria-controls="preview" onclick="setTimeout(function () {window.scrollTo(0,document.body.scrollHeight);}, 230);">Doplněný Email</button>
         
         <div id="preview" class="collapse container-fluid m-2"><?php echo EmailMessage($type, $db, $tempEmail, False); ?></div>

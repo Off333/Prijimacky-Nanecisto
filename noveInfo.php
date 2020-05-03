@@ -37,7 +37,7 @@ include_once "html/nav.php";
 
 ?>
 <article> 
-<div class="container bg-white border border-primary rounded rounded-lg mt-3 py-auto pt-2">
+<div class="container bg-white mt-3 py-auto pt-2">
     <form method="post" action="noveInfo.php" novalidate>
         <div class="mb-3 mt-4 ml-3">
             <p class="h5">Nová informace</p>
@@ -58,7 +58,7 @@ if($konec) {
 
 foreach($info as $row) {
     ?>
-    <div class="container bg-white border border-primary rounded rounded-lg mt-3 py-auto">
+    <div class="container bg-white mt-3 py-auto">
         <table style="width: 100%; height:100%;">
             <tr style="width: 100%; height:100%;">
                 <td style="width: 100%; height:100%;">
@@ -80,7 +80,7 @@ foreach($info as $row) {
 
 if(!$konec) {
     ?>
-    <div class="container bg-white border border-primary rounded rounded-lg mt-3 py-4">
+    <div class="container bg-white mt-3 py-4">
         &nbsp;
         <a class="btn btn-primary float-right mr-5" href='?lenght=<?php echo($lenght+5);?>'>zobrazit více</a>
     </div>
