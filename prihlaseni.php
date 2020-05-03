@@ -4,18 +4,23 @@ require_once "funkce.php";
 $errMsg = '';
 
 //kontrola prihlaseni uzivatele
-if (empty($_SESSION['user']) || empty($_COOKIE['user'])) {
+$user = $db->table('spravci')->where('User', '=', $_SESSION['user'])
+->where('User', '=', $_COOKIE['user'])->select()->last();
+if($user['User'] != $_SESSION['user'] && $user['User'] != $_COOKIE['user']){
 
     //overeni odkazu s pomoci formulare s metodou post
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-        $Password = $db->table('spravci')->where('User', '=', filter_input(INPUT_POST, 'user', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW))->select()->first()['Password'];
+        $Password = $db->table('spravci')->
+        where('User', '=', filter_input(INPUT_POST, 'user', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW))->
+        select()->first()['Password'];
 
         //autentizace = verifikace = overeni uzivatele
         if (!empty($_POST['passw']) && hash_equals($Password, md5($_POST['passw']))) {
 
             //povoleni pristupu uzivatele pomoci promenne v session
-            $spravceJmeno = $db->table('spravci')->where('User', '=', $_POST['user'])->select()->first()['User'];
+            $spravceJmeno = $db->table('spravci')
+            ->where('User', '=', $_POST['user'])->select()->first()['User'];
             setcookie('user', $spravceJmeno, (time() + 24 * 60 * 60));
             $_SESSION['user'] = $spravceJmeno;
             $_SESSION['IP'] = get_ip_address();

@@ -69,10 +69,17 @@ if($_SERVER['REQUEST_METHOD'] == "POST" || $debug){
                             $db->table('prihlaseni')->where('Id', '=', $value['Id'])->update($update);
                 
                             if($_POST['sendEmail']) {
-                                if($value['Paid'] == 'Ano' && $value['LogedOut'] == 'Ne' && ($value['PaidDate'] == '' || $value['PaidDate'] == null || empty($value['PaidDate'])) && $StateBefore['Paid'] != $value['Paid']) {
+                                if($value['Paid'] == 'Ano' 
+                                && $value['LogedOut'] == 'Ne' 
+                                && ($value['PaidDate'] == '' 
+                                || $value['PaidDate'] == null 
+                                || empty($value['PaidDate'])) 
+                                && $StateBefore['Paid'] != $value['Paid']) {
                                     $send = EmailMessage('pay', $db, $update);
                                     
-                                } elseif($value['Paid'] == 'Ne' && $value['LogedOut'] == 'Ano' && $StateBefore['LogedOut'] != $value['LogedOut']) {
+                                } elseif($value['Paid'] == 'Ne' 
+                                && $value['LogedOut'] == 'Ano' 
+                                && $StateBefore['LogedOut'] != $value['LogedOut']) {
                                     $send = EmailMessage('logOut', $db, $update);
 
                                 }
